@@ -7,20 +7,28 @@ $(document).ready(function(){
 	$(".zhezhao").css("display","none")
 	add.css("display","none")
 	input.css("display","none")
-	all=$(".footer .all")
-	all.css({"background":"dodgerblue","color":"white"})
+	var all=$(".footer .all")
+	var del=$(".delete")
+	all.css({"background":"#D40203","color":"white"})
+	ul=$("#ul")
+	ul.css("display","none")
+	$(".gd").css("display","none")
 	//初始化
 	$(".main .yuan").on("touchend",function(){
 		$(".main").css("display","none")
 		$(".header").css("display","block")
 		$(".footer").css("display","block")
 		$("body").css("background","#eee")
+		ul.css("display","block")
+		$(".gd").css("display","block")
 	})
 	$(".return").on("touchend",function(){
 		$(".main").css("display","block")
 		$(".header").css("display","none")
 		$(".footer").css("display","none")
-		$("body").css("background","dodgerblue")
+		$("body").css("background","#D40203")
+		ul.css("display","none")
+		$(".gd").css("display","none")
 	})
 	//进入页面
 	
@@ -52,7 +60,7 @@ $(document).ready(function(){
     	 	nodes[$(this).index()].state=1;
     	 	localStorage.nodes=JSON.stringify(nodes)
     	 }
-    	 if(y-pos<=30){
+    	 if(y-pos<=-30){
     	 	$(this).removeClass("done")
     	 	nodes[$(this).index()].state=0;
     	 	localStorage.nodes=JSON.stringify(nodes)
@@ -78,12 +86,12 @@ $(document).ready(function(){
 		
 		nodes.push(node)
 		localStorage.nodes=JSON.stringify(nodes);
-		$('<li><div class="content">'+node.name+'</div><div class="delete">×</div></li>').appendTo($("#ul"))
+		$('<li><div class="content"><span></span>'+node.name+'</div><div class="delete">删除</div></li>').appendTo($("#ul"))
 	})
 	function move(){
 		for(i=0;i<nodes.length;i++){
 			var done=(nodes[i].state===1)?"done":"";
-			$('<li class="'+done+'"><div class="content">'+nodes[i].name+'</div><div class="delete">×</div></li>').appendTo($("#ul"))
+			$('<li class="'+done+'"><div class="content"><span></span>'+nodes[i].name+'</div><div class="delete">删除</div></li>').appendTo($("#ul"))
 		}
 	}
 //	$(".yiwc").on("touchend",function(){
@@ -97,21 +105,25 @@ $(document).ready(function(){
 //	})
   $(".footer").on("touchend",".all",function(){
   	$("li").show()
-  	$(".footer div").css({"background":"white","color":"dodgerblue"})
-  	$(this).css({"background":"dodgerblue","color":"white"})
+  	$(".footer div").css({"background":"white","color":"#D40203"})
+  	$(this).css({"background":"#D40203","color":"white"})
   	
   })
    $(".footer").on("touchend",".yiwc",function(){
   	$("li").hide()
   	$(".done").show()
-  	$(".footer div").css({"background":"white","color":"dodgerblue"})
-  	$(this).css({"background":"dodgerblue","color":"white"})
+  	$(".footer div").css({"background":"white","color":"#D40203"})
+  	$(this).css({"background":"#D40203","color":"white"})
   })
    $(".footer").on("touchend",".weiwc",function(){
   	$("li").show()
   	$(".done").hide()
-  	$(".footer div").css({"background":"white","color":"dodgerblue"})
-  	$(this).css({"background":"dodgerblue","color":"white"})
+  	$(".footer div").css({"background":"white","color":"#D40203"})
+  	$(this).css({"background":"#D40203","color":"white"})
   })
+   del.on("touchend",function(){
+   	
+   	alert(1)
+   })
 	
 })

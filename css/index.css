@@ -4,7 +4,7 @@ html {
 
 body {
   font-size: 16px;
-  background: dodgerblue;
+  background: white;
 }
 
 * {
@@ -65,11 +65,15 @@ body {
   color: #969896;
   font-size: 4rem;
   opacity: 0.7;
+  background: url(../images/5.jpg) 0 2rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .gd .gdzi {
   width: 100%;
   font-size: 18px;
+  margin-top: 4rem;
 }
 
 .main {
@@ -85,15 +89,15 @@ body {
   right: 0;
   margin: auto;
   top: 4rem;
-  background: url(../images/2.png);
+  background: url(../images/11.png);
   background-size: cover;
 }
 
 .main .yuan {
   width: 3rem;
   height: 1rem;
-  background: white;
-  color: black;
+  background: #D40203;
+  color: white;
   line-height: 1rem;
   text-align: center;
   font-size: 22px;
@@ -102,7 +106,7 @@ body {
   right: 0;
   margin: auto;
   bottom: -2rem;
-  color: #666;
+  z-index: 1;
 }
 
 .header {
@@ -115,7 +119,7 @@ body {
   color: white;
   line-height: 0.6rem;
   font-size: 18px;
-  background: dodgerblue;
+  background: #D40203;
 }
 
 .header .zhezhao {
@@ -155,7 +159,7 @@ body {
   border: 0;
   border-radius: 5%;
   line-height: 1rem;
-  background: dodgerblue;
+  background: #D40203;
   color: white;
   text-align: left;
   font-size: 24px;
@@ -198,18 +202,27 @@ body {
 #ul {
   margin-top: 0.2rem;
   width: 100%;
-  padding: 0 0.3rem;
 }
 
 #ul li {
-  width: 95.4%;
+  width: 100%;
   height: 1rem;
-  padding: 0.2rem 0.1rem;
+  padding: 0.2rem 0.3rem;
   background: white;
   line-height: 1rem;
   position: relative;
   margin-bottom: 0.2rem;
   color: #333;
+}
+
+#ul li span {
+  margin-right: 2px;
+  display: inline-block;
+  width: .55rem;
+  height: .55rem;
+  background: url(../images/2.jpg);
+  background-size: cover;
+  vertical-align: middle;
 }
 
 #ul li .content {
@@ -221,32 +234,33 @@ body {
 }
 
 #ul li .delete {
-  width: 0.5rem;
-  height: 0.5rem;
-  background: #eee;
-  border-radius: 50%;
+  width: 1.4rem;
+  height: 0.7rem;
+  background: #D40203;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
   right: 0.4rem;
-  color: #666;
-  line-height: 0.5rem;
+  color: white;
+  line-height: 0.7rem;
   text-align: center;
-  font-weight: bold;
   display: none;
-}
-
-#ul .done .content {
-  text-decoration: line-through;
 }
 
 #ul .done .delete {
   display: block;
 }
 
+#ul .done span {
+  background: url(../images/3.jpg);
+  background-size: cover;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+
 .footer {
-  width: 93%;
+  width: 100%;
   height: 1rem;
   display: none;
   border-radius: 10%;
@@ -259,7 +273,7 @@ body {
   background: white;
   border: 1px solid #eee;
   float: left;
-  color: dodgerblue;
+  color: #D40203;
   text-align: center;
   line-height: 1rem;
 }
