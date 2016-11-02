@@ -54,6 +54,24 @@ body {
   font-family: "iconfont";
 }
 
+.gd {
+  width: 100%;
+  position: fixed;
+  padding: 2rem 0;
+  top: 2rem;
+  left: 0rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #969896;
+  font-size: 4rem;
+  opacity: 0.7;
+}
+
+.gd .gdzi {
+  width: 100%;
+  font-size: 18px;
+}
+
 .main {
   z-index: 2;
   display: block;

@@ -27,6 +27,10 @@ $(document).ready(function(){
 		$(".zhezhao").css("display","none")
 		$(this).css("display","none")
 		input.css("display","none")
+		if($("#ul li").length>0){
+			$(".gd").css("display","none")
+		}
+		
 	})
 	
 	var pos;
