@@ -2,7 +2,7 @@ $width:320px 360px 375px 412px 414px 750px;
 html{
     font-size: 100px;
 }
-$color:red;
+$color:dodgerblue;
 body{
     font-size: 16px;
     background:$color;
@@ -25,47 +25,52 @@ $shiji-width:750px;
 }
 
 @mixin top-bottom{
+    position: relative;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+@mixin top{
     position: absolute;
     top: 0;
     bottom:0;
     margin:auto;
 }
 
+
 .main{
-    width:100%;
-    height:13rem;
-    background:url(../images/1.jpg)0 100px;
-    background-size:100%;
-    background-repeat: no-repeat;
-    position: relative;
+   
     z-index: 2;
-    .main1{
-        width:100%;
-        height:100%;
+    display: block;
+    width:5rem;
+    height:5rem;
+    border-radius: 10%;
+    @include top-bottom;
+    top:4rem;
+    background:url(../images/2.png);
+    background-size: cover;
+   
+    .yuan{
+        width:3rem;
+        height:1rem;
+        background:white;
+        color:black;
+         line-height: 1rem;
+         text-align: center;
+        font-size: 22px;
         position: absolute;
         left:0;
-        top:0;
-        background:$color;
-        opacity: 0.6;
-    }
-    .yuan{
-        display: block;
-        width:4rem;
-        height:4rem;
-        border-radius: 50%;
-        @include top-bottom;
-        left:-30px;
-        background:white;
-        line-height: 4rem;
-        color:orange;
-        text-align: center;
-        font-size: 30px;
-        cursor: pointer;
-    }
-    
+        right:0;
+        margin:auto;
+        bottom:-2rem;
+        color:#666;
+    }  
    
 }
- .header{
+
+   .header{
     width: 100%;
     height: 1rem; 
     padding:0.2rem 0.3rem;
@@ -75,6 +80,8 @@ $shiji-width:750px;
     color:white;
     line-height: 0.6rem;
     font-size: 18px;
+    background:$color;
+   
     .zhezhao{
         position: absolute;
         left:0;
@@ -119,11 +126,25 @@ $shiji-width:750px;
         border-radius: 8%;
         text-align: center;
     }
+     .return{
+        
+        height:0.5rem;
+        @include top;
+       left:0.4rem;
+        color:white;
+        font-weight: bold;
+        line-height: 0.5rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        span{
+            margin-right:3px;
+        }
+    }
     .add1{
         width:0.5rem;
         height:0.5rem;
-        border-radius: 50%;
-        @include top-bottom;
+        @include top;
         right:0.4rem;
         color:white;
         font-weight: bold;
@@ -161,7 +182,7 @@ $shiji-width:750px;
         height:0.5rem;
         background: #eee;
         border-radius: 50%;
-        @include top-bottom;
+        @include top;
         right:0.4rem;
         color:#666;
         line-height: 0.5rem;

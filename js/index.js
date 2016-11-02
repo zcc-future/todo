@@ -1,9 +1,10 @@
 $(document).ready(function(){
-
+     $(".header").css("display","none")
 	$(".main .yuan").on("touchend",function(){
 		$(".main").css("display","none")
 		$(".header").css("display","block")
 		$(".footer").css("display","block")
+		$("body").css("background","#eee")
 	})
 	
 	var add=$(".header .add");
