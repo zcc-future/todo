@@ -12,6 +12,8 @@ body{
     margin:0;
     list-style: none;
     box-sizing: border-box;
+    font-family:"微软雅黑","宋体",sans-serif;
+    letter-spacing: 1px;
 }
 
 $shiji-width:750px;
@@ -69,7 +71,7 @@ $shiji-width:750px;
     height:5rem;
     border-radius: 10%;
     @include top-bottom;
-    top:4rem;
+    top:3rem;
     background:url(../images/11.png);
     background-size: cover;
    
@@ -157,7 +159,7 @@ $shiji-width:750px;
         text-align: center;
         font-size: 16px;
         span{
-            margin-right:3px;
+            margin-right:2px;
         }
     }
     .add1{
@@ -190,7 +192,7 @@ $shiji-width:750px;
        display: inline-block;
        width: .55rem;
        height:.55rem;
-       background: url(../images/2.jpg);
+       background: url(../images/44.png);
        background-size: cover;
        vertical-align: middle;
        
@@ -223,7 +225,7 @@ $shiji-width:750px;
         display: block;
     }
     .done span{
-       background: url(../images/3.jpg);
+       background: url(../images/33.png);
        background-size: cover;
        vertical-align: middle;
        background-repeat: no-repeat;
@@ -246,5 +248,14 @@ $shiji-width:750px;
         line-height: 1rem;
     }
 }
-
+.list{
+    position: fixed;
+    bottom:0.6rem;
+    right:0.3rem;
+    width:1rem;
+    height:1rem;
+    background: url(../images/66.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 

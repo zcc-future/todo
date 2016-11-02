@@ -1,6 +1,6 @@
 $(document).ready(function(){
      $(".header").css("display","none")
-	
+	list=$(".list")
 	var add=$(".header .add");
 	var add1=$(".header .icon.add1");
 	var input=$(".header input")
@@ -13,6 +13,7 @@ $(document).ready(function(){
 	ul=$("#ul")
 	ul.css("display","none")
 	$(".gd").css("display","none")
+	list.css("display","none")
 	//初始化
 	$(".main .yuan").on("touchend",function(){
 		$(".main").css("display","none")
@@ -21,6 +22,7 @@ $(document).ready(function(){
 		$("body").css("background","#eee")
 		ul.css("display","block")
 		$(".gd").css("display","block")
+		list.css("display","block")
 	})
 	$(".return").on("touchend",function(){
 		$(".main").css("display","block")
@@ -29,6 +31,7 @@ $(document).ready(function(){
 		$("body").css("background","#D40203")
 		ul.css("display","none")
 		$(".gd").css("display","none")
+		list.css("display","none")
 	})
 	//进入页面
 	
