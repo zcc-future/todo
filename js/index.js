@@ -8,7 +8,7 @@ $(document).ready(function(){
 	add.css("display","none")
 	input.css("display","none")
 	var all=$(".footer .all")
-	var del=$(".delete")
+	var del=$(".delete");
 	all.css({"background":"#D40203","color":"white"})
 	ul=$("#ul")
 	ul.css("display","none")
@@ -21,8 +21,12 @@ $(document).ready(function(){
 		$(".footer").css("display","block")
 		$("body").css("background","#eee")
 		ul.css("display","block")
-		$(".gd").css("display","block")
 		list.css("display","block")
+		if($("#ul li").length>0){
+			$(".gd").css("display","none")
+		}else{
+			$(".gd").css("display","block")
+		}
 	})
 	$(".return").on("touchend",function(){
 		$(".main").css("display","block")
@@ -35,10 +39,13 @@ $(document).ready(function(){
 	})
 	//进入页面
 	
+	
 	add1.on("touchend",function(){
+		
 		$(".zhezhao").css("display","block")
 		add.css("display","block");
 	   input.css("display","block")
+	   
 	})
 	add.on("touchend",function(){
 		$(".zhezhao").css("display","none")
@@ -46,9 +53,21 @@ $(document).ready(function(){
 		input.css("display","none")
 		if($("#ul li").length>0){
 			$(".gd").css("display","none")
+		}else{
+			$(".gd").css("display","block")
 		}
 		
+		
 	})
+	//list
+	var clear1=$("#clear")
+	clear1.css("display","none")
+	
+	
+	list.on("touchend",function(){
+		clear1.css("display","block")
+	})
+	
 	
 	var pos;
 	var nodes=[];
@@ -76,6 +95,7 @@ $(document).ready(function(){
 		nodes=[]
 		nodes=JSON.parse(localStorage.nodes);
 		move();
+		
 	}
 	
 	add.on("touchend",function(){
@@ -84,6 +104,7 @@ $(document).ready(function(){
 		if(!v){
 			return
 		}
+		input.val("")
 		var node={
 			name:v,
 			state:0
@@ -92,6 +113,7 @@ $(document).ready(function(){
 		nodes.push(node)
 		localStorage.nodes=JSON.stringify(nodes);
 		$('<li><div class="content"><span></span>'+node.name+'</div><div class="delete">删除</div></li>').appendTo($("#ul"))
+	   
 	})
 	function move(){
 		for(i=0;i<nodes.length;i++){
@@ -99,15 +121,7 @@ $(document).ready(function(){
 			$('<li class="'+done+'"><div class="content"><span></span>'+nodes[i].name+'</div><div class="delete">删除</div></li>').appendTo($("#ul"))
 		}
 	}
-//	$(".yiwc").on("touchend",function(){
-//		var newarr1=[];
-//		for(var i=0;i<nodes.length;i++){
-//			if(nodes[i].state != 0){
-//				newarr1.push(nodes[i])
-//			}
-//			nodes=newarr1;
-//		}
-//	})
+
   $(".footer").on("touchend",".all",function(){
   	$("li").show()
   	$(".footer div").css({"background":"white","color":"#D40203"})
@@ -126,9 +140,41 @@ $(document).ready(function(){
   	$(".footer div").css({"background":"white","color":"#D40203"})
   	$(this).css({"background":"#D40203","color":"white"})
   })
-   del.on("touchend",function(){
-   	
-   	alert(1)
+   
+   $(".delete").on("touchend",function(){
+   	  var dli=$(this).closest("li")
+		dli.remove();
+		var num=$(this).index()-1
+		nodes.splice(num,1);
+		localStorage.nodes=JSON.stringify(nodes);
+		if($("#ul li").length>0){
+			$(".gd").css("display","none")
+		}else{
+			$(".gd").css("display","block")
+		}
    })
-	
+   $(".clear").on("touchend",function(){
+    	
+   	 $(".done").remove()
+   	 var newarr1=[];
+		for(var i=0;i<nodes.length;i++){
+			if(nodes[i].state ==0){
+				newarr1.push(nodes[i])
+			}
+			nodes=newarr1;
+		}
+		localStorage.nodes=JSON.stringify(nodes);
+		if($("#ul li").length>0){
+			$(".gd").css("display","none")
+		}else{
+			$(".gd").css("display","block")
+		}
+   })
+   $("#clear div").on("touchend",function(){
+   	$("#clear div").css({"color":"#333"})
+   	$(this).css({"color":"#D40203"})
+   })
+   $(body).on("touchend",function(){
+   	
+   })
 })
