@@ -1,5 +1,15 @@
 $(document).ready(function(){
      $(".header").css("display","none")
+	
+	var add=$(".header .add");
+	var add1=$(".header .icon.add1");
+	var input=$(".header input")
+	$(".zhezhao").css("display","none")
+	add.css("display","none")
+	input.css("display","none")
+	all=$(".footer .all")
+	all.css({"background":"dodgerblue","color":"white"})
+	//初始化
 	$(".main .yuan").on("touchend",function(){
 		$(".main").css("display","none")
 		$(".header").css("display","block")
@@ -12,12 +22,8 @@ $(document).ready(function(){
 		$(".footer").css("display","none")
 		$("body").css("background","dodgerblue")
 	})
-	var add=$(".header .add");
-	var add1=$(".header .icon.add1");
-	var input=$(".header input")
-	$(".zhezhao").css("display","none")
-	add.css("display","none")
-	input.css("display","none")
+	//进入页面
+	
 	add1.on("touchend",function(){
 		$(".zhezhao").css("display","block")
 		add.css("display","block");
@@ -91,14 +97,21 @@ $(document).ready(function(){
 //	})
   $(".footer").on("touchend",".all",function(){
   	$("li").show()
+  	$(".footer div").css({"background":"white","color":"dodgerblue"})
+  	$(this).css({"background":"dodgerblue","color":"white"})
+  	
   })
    $(".footer").on("touchend",".yiwc",function(){
   	$("li").hide()
   	$(".done").show()
+  	$(".footer div").css({"background":"white","color":"dodgerblue"})
+  	$(this).css({"background":"dodgerblue","color":"white"})
   })
    $(".footer").on("touchend",".weiwc",function(){
   	$("li").show()
   	$(".done").hide()
+  	$(".footer div").css({"background":"white","color":"dodgerblue"})
+  	$(this).css({"background":"dodgerblue","color":"white"})
   })
 	
 })
