@@ -177,7 +177,7 @@ $shiji-width:750px;
 #ul{
     margin-top:0.2rem; 
     width:100%;
-    
+    overflow: hidden;
     li{
     width: 100%;
     height: 1rem;
@@ -221,8 +221,20 @@ $shiji-width:750px;
 //      text-decoration: line-through;
 //      color:#eee;
     }
+    @keyframes aa{
+      0%{
+        right:-1.4rem;  
+      }
+      100%{
+          right:0.4rem;
+      }
+    }
+    .move{
+        animation:aa 0.4s linear 0s 1  forwards;
+    }
     .done .delete{
         display: block;
+       
     }
     .done span{
        background: url(../images/33.png);

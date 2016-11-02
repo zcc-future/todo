@@ -28,7 +28,7 @@ $(document).ready(function(){
 		$(".main").css("display","block")
 		$(".header").css("display","none")
 		$(".footer").css("display","none")
-		$("body").css("background","#D40203")
+		$("body").css("background","none")
 		ul.css("display","none")
 		$(".gd").css("display","none")
 		list.css("display","none")
@@ -58,15 +58,17 @@ $(document).ready(function(){
     
     $("#ul").on("touchend","li",function(e){
     	 var y=e.originalEvent.changedTouches[0].clientX
-    	 if(y-pos>=30){
+    	 if(y-pos<=-30){
     	 	$(this).addClass("done")
     	 	nodes[$(this).index()].state=1;
-    	 	localStorage.nodes=JSON.stringify(nodes)
+    	 	localStorage.nodes=JSON.stringify(nodes);
+    	 	$(".delete").addClass("move")
     	 }
-    	 if(y-pos<=-30){
+    	 if(y-pos>=30){
     	 	$(this).removeClass("done")
     	 	nodes[$(this).index()].state=0;
     	 	localStorage.nodes=JSON.stringify(nodes)
+    	 	$(".delete").removeClass("move")
     	 }
     })
 	
