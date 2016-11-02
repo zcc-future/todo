@@ -23,7 +23,9 @@ $shiji-width:750px;
         }
     }
 }
-
+.icon{
+    font-family:"iconfont";
+}
 @mixin top-bottom{
     position: relative;
     top: 0;
@@ -132,10 +134,8 @@ $shiji-width:750px;
         @include top;
        left:0.4rem;
         color:white;
-        font-weight: bold;
         line-height: 0.5rem;
         text-align: center;
-        font-weight: bold;
         font-size: 16px;
         span{
             margin-right:3px;
@@ -147,11 +147,9 @@ $shiji-width:750px;
         @include top;
         right:0.4rem;
         color:white;
-        font-weight: bold;
         line-height: 0.5rem;
         text-align: center;
-        font-weight: bold;
-        font-size: 28px;
+        font-size: 18px;
     }
     
 }
@@ -206,7 +204,7 @@ $shiji-width:750px;
     border-radius: 10%;
     margin:0 auto;
     div{
-        width:31.5%;
+        width:33.3%;
         height:1rem;
         background:white;
         border:1px solid #eee;  

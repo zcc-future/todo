@@ -50,6 +50,10 @@ body {
   }
 }
 
+.icon {
+  font-family: "iconfont";
+}
+
 .main {
   z-index: 2;
   display: block;
@@ -150,10 +154,8 @@ body {
   margin: auto;
   left: 0.4rem;
   color: white;
-  font-weight: bold;
   line-height: 0.5rem;
   text-align: center;
-  font-weight: bold;
   font-size: 16px;
 }
 
@@ -170,11 +172,9 @@ body {
   margin: auto;
   right: 0.4rem;
   color: white;
-  font-weight: bold;
   line-height: 0.5rem;
   text-align: center;
-  font-weight: bold;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 #ul {
@@ -236,7 +236,7 @@ body {
 }
 
 .footer div {
-  width: 31.5%;
+  width: 33.3%;
   height: 1rem;
   background: white;
   border: 1px solid #eee;

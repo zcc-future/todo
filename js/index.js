@@ -6,9 +6,14 @@ $(document).ready(function(){
 		$(".footer").css("display","block")
 		$("body").css("background","#eee")
 	})
-	
+	$(".return").on("touchend",function(){
+		$(".main").css("display","block")
+		$(".header").css("display","none")
+		$(".footer").css("display","none")
+		$("body").css("background","dodgerblue")
+	})
 	var add=$(".header .add");
-	var add1=$(".header .add1");
+	var add1=$(".header .icon.add1");
 	var input=$(".header input")
 	$(".zhezhao").css("display","none")
 	add.css("display","none")
