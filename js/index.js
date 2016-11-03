@@ -144,7 +144,7 @@ $(document).ready(function(){
    $(".delete").on("touchend",function(){
    	  var dli=$(this).closest("li")
 		dli.remove();
-		var num=$(this).index()-1
+		var num=$(this).index()
 		nodes.splice(num,1);
 		localStorage.nodes=JSON.stringify(nodes);
 		if($("#ul li").length>0){
