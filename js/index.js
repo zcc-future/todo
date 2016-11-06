@@ -67,7 +67,9 @@ $(document).ready(function(){
 	list.on("touchend",function(){
 		clear1.css("display","block")
 	})
-	
+//	$(body).on("touchend","list",function(){
+// 	
+// })
 	
 	var pos;
 	var nodes=[];
@@ -77,11 +79,12 @@ $(document).ready(function(){
     
     $("#ul").on("touchend","li",function(e){
     	 var y=e.originalEvent.changedTouches[0].clientX
+    	 var index=$(this).index()
     	 if(y-pos<=-30){
     	 	$(this).addClass("done")
     	 	nodes[$(this).index()].state=1;
     	 	localStorage.nodes=JSON.stringify(nodes);
-    	 	$(".delete").addClass("move")
+    	 	$(".delete").eq(index).addClass("move")
     	 }
     	 if(y-pos>=30){
     	 	$(this).removeClass("done")
@@ -141,10 +144,10 @@ $(document).ready(function(){
   	$(this).css({"background":"#D40203","color":"white"})
   })
    
-   $(".delete").on("touchend",function(){
+   $("#ul").on("touchend",".delete",function(){
    	  var dli=$(this).closest("li")
 		dli.remove();
-		var num=$(this).index()-1
+		var num=$(this).index()
 		nodes.splice(num,1);
 		localStorage.nodes=JSON.stringify(nodes);
 		if($("#ul li").length>0){
@@ -153,6 +156,8 @@ $(document).ready(function(){
 			$(".gd").css("display","block")
 		}
    })
+   //清除
+   
    $(".clear").on("touchend",function(){
     	
    	 $(".done").remove()
@@ -169,12 +174,11 @@ $(document).ready(function(){
 		}else{
 			$(".gd").css("display","block")
 		}
+		return false;
    })
    $("#clear div").on("touchend",function(){
    	$("#clear div").css({"color":"#333"})
    	$(this).css({"color":"#D40203"})
    })
-   $(body).on("touchend",function(){
-   	
-   })
+   
 })
